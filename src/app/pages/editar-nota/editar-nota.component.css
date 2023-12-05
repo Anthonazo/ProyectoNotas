@@ -2,41 +2,71 @@
 	width: 100%;
 	max-width: 600px;
 	margin: 15px auto;
-}
-
-.back-button {
+  }
+  
+  .back-button {
 	margin: 20px 0;
-	color:rgb(23, 145, 237);
+	color: rgb(23, 145, 237);
 	display: block;
 	text-decoration: none;
 	font-size: 14px;
 	font-weight: 500;
-}
-
-.nota-container {
+  }
+  
+  .nota-container {
 	width: 100%;
 	border: 1px solid #c8ced7;
 	border-radius: 7px;
 	display: block;
 	padding: 10px 12px;
-}
-
-.nota-container .id {
+	margin-top: 20px; /* Ajusta el margen superior según tus preferencias */
+  }
+  
+  .nota-container .id {
 	font-size: 13px;
 	font-style: italic;
 	color: #9c9c9c;
-}
-
-.nota-container .title {
-	font-size: 20px;
-	font-weight: bold;
-}
-
-.nota-container .date {
+  }
+  
+  .nota-container label {
+	font-size: 16px; /* Ajusta el tamaño de fuente de las etiquetas según tus preferencias */
+  }
+  
+  .nota-container input,
+  .nota-container textarea {
+	width: 100%;
+	padding: 8px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+  }
+  
+  .nota-container .date {
 	font-size: 13px;
 	color: #9c9c9c;
-}
+  }
+  
+  .nota-container .button {
+	margin-top: 15px; /* Ajusta el margen superior del botón según tus preferencias */
+  }
+  
+  .button-guardar {
+	background-color: rgb(23, 145, 237);
+	color: white;
+	padding: 10px 15px;
+	font-size: 16px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+  }
+  
+  .button-guardar:hover {
+	background-color: #0e91d9;
+  }
 
-.nota-container .content {
-	font-size: 15px;
+  label {
+    margin-top: 10px;
+    font-weight: bold;
 }
+  

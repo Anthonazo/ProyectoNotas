@@ -31,11 +31,16 @@ export class EditarNotaComponent {
     })
   }
 
-
-
-
-
   actualizar() {
-
+    if (this.nota) {
+      const notaActualizada: Nota = {
+        uid: this.nota.uid,
+        titulo: this.nota.titulo,
+        contenido: this.nota.contenido,
+        fecha: this.nota.fecha,
+      };
+      this.firebaseNotas.update(notaActualizada)
+    }
   }
 }
+

@@ -7,18 +7,14 @@
 		<form #notaForm="ngForm" (ngSubmit)="actualizar()">
 		  <p class="id">ID: {{ nota.uid }}</p>
   
-		  <!-- Campo de título -->
 		  <label for="titulo">Título:</label>
 		  <input type="text" id="titulo" name="titulo" [(ngModel)]="nota.titulo" required>
   
-		  <!-- Campo de fecha (readonly) -->
 		  <p class="date">{{ nota.fecha | date:'dd-MM-yyyy HH:mm' }}</p>
   
-		  <!-- Campo de contenido -->
 		  <label for="contenido">Contenido:</label>
 		  <textarea id="contenido" name="contenido" [(ngModel)]="nota.contenido" required></textarea>
   
-		  <!-- Botón de guardar -->
 		  <div class="button">
 			<button class="button-guardar" type="submit">Guardar</button>
 		  </div>

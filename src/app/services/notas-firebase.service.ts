@@ -24,9 +24,9 @@ export class NotasFirebaseService {
     return this.notasRef.valueChanges()
   }
 
-  search() {
-
-  }
+  update(nota: Nota) {
+    const notaDoc = this.notasRef.doc(nota.uid);
+    return notaDoc.update({ titulo: nota.titulo, contenido: nota.contenido });  }
 
   delete(nota: Nota) { 
     this.notasRef.doc(nota.uid).delete();
