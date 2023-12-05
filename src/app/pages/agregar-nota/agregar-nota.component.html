@@ -1,0 +1,19 @@
+<div class="form-container">
+	<div class="uno">
+		<h1>Sube tu nota</h1>
+		<p>Ingresa tu nota, para que puedas observarla en el panel principal, asi como para poder editarla <br>
+			eliminarla u otra accion.
+		</p>
+	</div>
+	<form id="form-one">
+		<label for="titulo">Titulo de la Nota:</label>
+		<input type="text" id="titulo" name="titulo" required class="input" [(ngModel)]="nota.titulo">
+
+		<label for="contenido">Contenido</label>
+		<textarea  id="contenido" name="contenido" rows="4" required class="contenido"
+			[(ngModel)]="nota.contenido"></textarea>
+
+		<button type="button" (click)="saveNota()" class="summit-enviar">Subir Nota</button>
+	</form>
+
+</div>

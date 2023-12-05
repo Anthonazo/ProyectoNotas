@@ -1,0 +1,9 @@
+<!-- Formacion de el sidebar haciendo uso de RouterLink para crear en enlace y CSS
+	para las rutas "routerLinkActive"
+-->
+<div class="sidebar">
+	<div class="nav-items">
+		<li class="nav-item"><a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="notas">Listado Notas</a></li>
+		<li class="nav-item"><a routerLinkActive="active" routerLink="notas/nueva">Nueva nota</a></li>
+	</div>
+</div>

@@ -1,0 +1,71 @@
+.notes-container {
+	width: 100%;
+	max-width: 600px;
+	border: 1px solid #c8ced7;
+	border-radius: 7px;
+	margin: 15px auto;
+	display: block;
+	overflow: hidden;
+}
+
+.notes-container .note {
+	padding: 10px 12px;
+	cursor: pointer;
+	border-top: 1px solid #c8ced7;
+
+}
+
+.notes-container .note:hover {
+	background-color: #f3f7fc;
+}
+
+.notes-container .note .id {
+	font-size: 13px;
+	font-style: italic;
+	color: #9c9c9c;
+}
+
+.notes-container .note .title {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.notes-container .note .date {
+	font-size: 13px;
+	color: #9c9c9c;
+}
+
+.notes-container .note .content {
+	font-size: 15px;
+}
+
+.notes-container .note:last-child {
+	border-bottom: 0;
+}
+  
+
+.notes-container .buttons button.edit {
+	margin-bottom: 10px;
+	margin-left: 10px;
+	background-color: #000000; /* Color de fondo verde para el botón Editar */
+	color: white; /* Texto en color blanco */
+	border: none; /* Sin borde */
+	padding: 8px 16px; /* Ajustes de relleno */
+	cursor: pointer;
+	border-radius: 4px; /* Bordes redondeados */
+	margin-right: 8px; /* Margen a la derecha para separar los botones */
+  }
+  
+  .notes-container .buttons button.delete {
+	background-color: #f44336; /* Color de fondo rojo para el botón Eliminar */
+	color: white; /* Texto en color blanco */
+	border: none; /* Sin borde */
+	padding: 8px 16px; /* Ajustes de relleno */
+	cursor: pointer;
+	border-radius: 4px; /* Bordes redondeados */
+  }
+  
+  .notes-container .buttons button:hover {
+	opacity: 0.8; /* Opacidad reducida al pasar el mouse */
+  }
+  

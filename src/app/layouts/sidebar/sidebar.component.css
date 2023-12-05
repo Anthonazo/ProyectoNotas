@@ -1,0 +1,50 @@
+
+/* IMPLEMENTACION DE CODIGO PARA REALIZAR EL SIDEBAR
+ */
+.sidebar {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background: rgb(1, 50, 103);
+	color: #FFF;
+}
+
+.sidebar .nav-items {
+	padding: 20px 0;
+	margin: 0;
+	list-style: none;
+}
+
+.sidebar .nav-items .nav-item {
+	position: relative;
+	cursor: pointer;
+}
+
+.sidebar .nav-items .nav-item:hover {
+	background: rgba(255,255,255,0.2);
+}
+
+.sidebar .nav-items .nav-item a {
+	color: #e4e4e4e5;
+	text-decoration: none;
+	padding: 10px 20px;
+	display: block;
+}
+
+.sidebar .nav-items .nav-item a.active {
+	position: relative;
+}
+
+.sidebar .nav-items .nav-item a.active:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 3px;
+	height: 100%;
+	background-color: rgb(0, 212, 170);
+}
+
+.sidebar .nav-items .nav-item:hover a {
+	color: #FFF;
+}

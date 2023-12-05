@@ -1,0 +1,16 @@
+<div class="main-content">
+
+	<a routerLink="../" class="back-button">Volver</a>
+
+	<ng-container *ngIf="nota">
+		<div class="nota-container">
+
+			<p class="id">ID: {{ nota.uid }}</p>
+			<h1 class="title">{{ nota.titulo }}</h1>
+			<p class="date">{{ nota.fecha | date:'dd-MM-yyyy HH:mm' }}</p>
+			<p class="content">{{ nota.contenido }}</p>
+
+		</div>
+	</ng-container>
+	
+</div>

@@ -1,0 +1,18 @@
+<div class="notes-container">
+
+	<ng-container *ngFor="let n of notas">
+
+
+		<div class="note" [routerLink]="['/notas', n.uid]">
+			<p class="id">ID: {{ n.uid }}</p>
+			<h1 class="title">{{ n.titulo }}</h1>
+			<p class="date">{{ n?.fecha | date }}</p>
+			<p class="content">{{ n.contenido | slice:0:50 }}</p>
+		</div>
+		<div class="buttons">
+			<button class="edit" (click)="actualizarNotas(n)">Editar</button>
+			<button class="delete" (click)="eliminarNotas(n)">Eliminar</button>
+		</div>
+	</ng-container>
+
+</div >
