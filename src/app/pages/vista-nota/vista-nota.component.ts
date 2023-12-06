@@ -12,6 +12,9 @@ export class VistaNotaComponent {
 	notasFirebase: any;
 	nota: Nota | null = null;
 
+	/* 
+	Por paso de parametros obtenemos la nota mediante en uid
+	*/
 	constructor(
 		private firebaseNotas: NotasFirebaseService,
 		private route: ActivatedRoute,
@@ -23,16 +26,14 @@ export class VistaNotaComponent {
 		}
 	}
 
+	/* 
+	Metodo que recibe el uid para obtener la nota del firebase
+	*/
 	obtenerNotas(uid: string) {
 		this.firebaseNotas.getAll().subscribe((notasSnapshot) => {
 			const nota = notasSnapshot.find((nota) => nota.uid === uid)
 			nota.fecha = new Date(nota.fecha.seconds * 1000)
 			this.nota = nota
 		})
-	}
-
-
-	actualizar(){
-		
 	}
 }

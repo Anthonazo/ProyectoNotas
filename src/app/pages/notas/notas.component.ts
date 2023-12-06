@@ -18,9 +18,16 @@ export class NotasComponent implements OnInit {
 		private router: Router,
 	) {}
 
+	/* 
+	Creamos un obtener notas que se ejecutara cuando carguemos la pagina
+	*/
 	ngOnInit(): void {
 		this.obtenerNotas()
 	}
+
+	/* 
+	Metodo que obtiene las notas del firebase y los almacena localmente 
+	*/
 
 	obtenerNotas() {
 		this.firebaseNotas.getAll().subscribe(notasSnapshot => {
@@ -30,6 +37,9 @@ export class NotasComponent implements OnInit {
 		  })
 	}
 
+	/* 
+	Elimina las notas mediante el index de esta de manera local y se comunicara con el firebase
+	*/
 	eliminarNotas(nota: Nota){
 		const n = this.notas.indexOf(nota)
 		this.firebaseNotas.delete(nota)
@@ -37,6 +47,9 @@ export class NotasComponent implements OnInit {
 		this.obtenerNotas();
 	}
 
+	/* 
+	metodo que nos va a redirigir a la pestaña donde se puede editar la nota
+	*/
 	actualizarNotas(nota: Nota){
 		this.router.navigate(['/editar', nota.uid]);
 	}

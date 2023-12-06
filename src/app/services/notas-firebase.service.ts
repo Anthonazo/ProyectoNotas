@@ -15,24 +15,35 @@ export class NotasFirebaseService {
   constructor(private db: AngularFirestore) {
     this.notasRef = db.collection(this.path)
 
-    this.notasRef.valueChanges().subscribe(data => {
-      console.log(data)
-    })
   }
+
+  /* 
+  Metodo para obtener las notas del firebase
+  */
 
   getAll() {
     return this.notasRef.valueChanges()
   }
 
+  /* 
+  metodo para actualizar las notas del firebase
+  */
+
   update(nota: Nota) {
     const notaDoc = this.notasRef.doc(nota.uid);
     return notaDoc.update({ titulo: nota.titulo, contenido: nota.contenido });  }
 
+  /*  
+  metodo para eliminar las notas del firebase
+  */
   delete(nota: Nota) { 
     this.notasRef.doc(nota.uid).delete();
 
   }
 
+  /* 
+  metodo para agregar nota al firebase
+  */
   save(nota: Nota) {
     const uid = this.db.createId()
     nota.uid = uid

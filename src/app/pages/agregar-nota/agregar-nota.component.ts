@@ -12,11 +12,18 @@ export class AgregarNotaComponent {
 	notasFirebase: any;
 	nota = new Nota();
 
+	/* 
+	Mediante inyeccion de dependencias usamos el servicio creado de firebase
+	*/
 	constructor(private firebaseNotas: NotasFirebaseService) { }
 
+	/* 
+	Metodo save nota que almacena en el firebase mediante el servicio
+	ademas usa una notificacion en caso de no ingresar nungun elemento
+	*/
 	saveNota() {
 		if (this.nota.titulo == null) {
-			alert('Ingresar el titulo de la nota')
+			this.mostrarNotificacion('Ingresar el título de la nota');
 		}
 		else {
 			this.nota.fecha = new Date();
@@ -25,4 +32,20 @@ export class AgregarNotaComponent {
 		}
 
 	}
+
+
+	/* 
+	Notificacion que se va a mostrar, diseñado para el saveNota
+	*/
+	mostrarNotificacion(mensaje: string) {
+		if ('Notification' in window) {
+		  Notification.requestPermission().then((permission) => {
+			if (permission === 'granted') {
+			  new Notification('Notificación de la aplicación', {
+				body: mensaje,
+			  });
+			}
+		  });
+		}
+	  }
 }

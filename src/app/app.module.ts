@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { VistaNotaComponent } from './pages/vista-nota/vista-nota.component';
 import { SidebarModule } from './layouts/sidebar/sidebar.module';
 import { EditarNotaComponent } from './pages/editar-nota/editar-nota.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
 	declarations: [
@@ -21,7 +22,7 @@ import { EditarNotaComponent } from './pages/editar-nota/editar-nota.component';
 		NotasComponent,
 		AgregarNotaComponent,
 		VistaNotaComponent,
-  		EditarNotaComponent,
+		EditarNotaComponent,
 	],
 	imports: [
 		provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
@@ -30,10 +31,16 @@ import { EditarNotaComponent } from './pages/editar-nota/editar-nota.component';
 		AppRoutingModule,
 		FormsModule,
 		SidebarModule,
+		ServiceWorkerModule.register('ngsw-worker.js', {
+			enabled: !isDevMode(),
+			// Register the ServiceWorker as soon as the application is stable
+			// or after 30 seconds (whichever comes first).
+			registrationStrategy: 'registerWhenStable:30000'
+		}),
 	],
 	providers: [
 		{ provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig },
 	],
 	bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

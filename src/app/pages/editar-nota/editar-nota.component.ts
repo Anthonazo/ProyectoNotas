@@ -12,6 +12,10 @@ export class EditarNotaComponent {
   notasFirebase: any;
   nota: Nota | null = null;
 
+  /* 
+  Pasamos los parametros para buscar la nota mediante el uid
+  esto mediante el obtenernotas
+  */
   constructor(
     private firebaseNotas: NotasFirebaseService,
     private route: ActivatedRoute,
@@ -23,6 +27,9 @@ export class EditarNotaComponent {
     }
   }
 
+  /* 
+  Metodo de obtener notas que busca en el firebase
+  */
   obtenerNotas(uid: string) {
     this.firebaseNotas.getAll().subscribe((notasSnapshot) => {
       const nota = notasSnapshot.find((nota) => nota.uid === uid)
@@ -31,6 +38,9 @@ export class EditarNotaComponent {
     })
   }
 
+  /* 
+  metodo actualizar que va a actualizar en el firebase las notas
+  */
   actualizar() {
     if (this.nota) {
       const notaActualizada: Nota = {
