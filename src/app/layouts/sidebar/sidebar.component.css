@@ -48,3 +48,51 @@
 .sidebar .nav-items .nav-item:hover a {
 	color: #FFF;
 }
+
+.sidebar {
+	position: relative;
+  }
+  
+  .button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 999; /* Asegura que esté sobre el contenido del sidebar */
+  }
+  
+  .button-sidebar {
+	cursor: pointer;
+	background: none;
+	border: none;
+	color: #ffffff;
+	font-size: 20px;
+	margin: 10px;
+  }
+	
+  .nav-items {
+	width: 200px; /* Ajusta según tus necesidades */
+	height: 100%;
+	overflow: auto;
+	background: rgb(1, 50, 103);
+	color: #FFF;
+	transition: width 0.25s; /* Agregamos transición para suavizar el cambio de tamaño */
+	display: flex; /* Añadimos flex para que el botón y el menú se alineen correctamente */
+	flex-direction: column; /* Colocamos los elementos en columna */
+	margin-top: 50px; /* Ajusta según el tamaño del botón */
+  }
+
+  .sidebar{
+	transition: width 0.25s;
+  }
+  
+  .nav-items.collapsed {
+	width: 0px; /* Ancho reducido cuando está colapsado */
+  }
+  
+  .sidebar.collapsed {
+	width: 35px; /* Ancho reducido cuando está colapsado */
+  }
+  /* Resto del CSS para los elementos del menú */
+  
+  
+
